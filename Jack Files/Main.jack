@@ -1,0 +1,113 @@
+class Main {
+
+    function void main()
+    {
+        var String s, str;
+        var int l,i;
+        var char ch,at, nc;
+        var int loc;
+
+// Taking length as input from the user
+  let l = Keyboard.readInt("Enter the length of the String:  ");
+	let s = String.new(l);
+  do Output.println();
+
+// If the length of the String is 'not 0', the IF case runs
+  if(~(l = 0))
+  {
+// Taking String as input from the user
+    let str = Keyboard.readLine("Enter the String:  ");
+    let i = 0;
+    while(i < l)
+      {
+        do s.appendChar(str.charAt(i));
+        let i = i+1;
+      }
+    do Output.println();
+
+    let i = 0;
+    let i = Keyboard.readInt("Enter 1 to search character at a location : ");
+    do Output.println();
+    if(i=1)
+    {
+
+// Performing charAt function which returns the character at the specified index
+
+    let at = Keyboard.readInt("Enter the position to search the character: ");
+    do Output.printChar(s.charAt(at-1));
+    do Output.println();
+    do Output.println();
+}
+      let i = Keyboard.readInt("Enter 2 to erase the last character: ");
+
+      if (i = 2)
+      {
+    // Performing eraseLastChar function
+      do Output.printString("The String after erasing the last character: ");
+      do s.eraseLastChar();
+
+// Printing the String
+        let i = 0;
+        while(i < s.length())
+        {
+          do Output.printChar(s.charAt(i));
+          let i = i+1;
+        }
+        do Output.println();
+        do Output.println();
+	}
+// Returning length of the string
+    do Output.printString("The current length of the string: ");
+    do Output.printInt(s.length());
+    do Output.println();
+    do Output.println();
+
+   let i = 0;
+    let i = Keyboard.readInt("Enter 3 to set another character at a location: ");
+    do Output.println();
+
+    if (i = 3)
+  {
+// Performing setCharAt function to change the character at specified position
+
+    let loc = Keyboard.readInt("Enter the location of the String to set new character: ");
+    do Output.println();
+
+    do Output.printString("Enter the new Character: ");
+    let nc = Keyboard.readChar();
+    do Output.println();
+    do Output.println();
+
+    do s.setCharAt(loc-1,nc);
+    do Output.printString("The Final String after setting the element at the given position:");
+    do Output.println();
+
+// Display the string
+    let i = 0;
+    while(i < s.length())
+    {
+      do Output.printChar(s.charAt(i));
+      let i = i+1;
+    }
+  }
+
+  else
+  {
+    do Output.printString("The program is ended.");
+  }
+}
+
+// If the length is 0, the following else case runs
+  else
+  {
+    do Output.printString("Empty string is constructed, but no operation can be performed further.");
+    do Output.println();
+    do Output.println();
+    do Output.printString("The current length of the string: ");
+    do Output.printInt(s.length());
+  }
+// Finally disposing the String
+      do s.dispose();
+      return;
+  }
+}
